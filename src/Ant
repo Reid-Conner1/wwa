@@ -1,0 +1,58 @@
+public class Ant {
+    int hp;
+    int attack;
+    int x;
+    int y;
+
+    public Ant(String antFileLocation) {
+        getProperties(antFileLocation);
+    }
+    
+    private void getProperties(String antFileLocation)
+    {
+    	BufferedReader in = new BufferedReader(new FileReader(antFileLocation));
+    	String propertiesString;
+    	ArrayList<String> properties = new ArrayList<String>();
+    	while ((propertiesString = br.readLine()) != null)
+    	{
+    		Scanner scan = new Scanner(properties);
+			scan.useDelimiter(":");
+			scan.Next();
+			properties.add(scan.next());
+    	}
+    	setAttack(properties[0]);
+    	//set more properties here
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getHP() {
+        return hp;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public void setHP(int hp) {
+        this.hp = hp;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+}
